@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 09:49:21 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/27 10:16:14 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2020/03/30 15:07:35 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,57 +16,57 @@ Contact::Contact(void){}
 
 Contact::~Contact(void){}
 
-void Contact::set_firstName(std::string firstName)
+void        Contact::set_firstName(std::string firstName)
 { 
     _firstName = firstName;
 }
 
-void Contact::set_lastName(std::string lastName)
+void        Contact::set_lastName(std::string lastName)
 { 
     _lastName = lastName;
 }
 
-void Contact::set_nickname(std::string nickname)
+void        Contact::set_nickname(std::string nickname)
 { 
     _nickname = nickname;
 }
 
-void Contact::set_login(std::string login)
+void        Contact::set_login(std::string login)
 { 
     _login = login;
 }
 
-void Contact::set_postalAddress(std::string postalAddress)
+void        Contact::set_postalAddress(std::string postalAddress)
 { 
     _postalAddress = postalAddress;
 }
 
-void Contact::set_emailAddress(std::string emailAddress)
+void        Contact::set_emailAddress(std::string emailAddress)
 { 
     _emailAddress = emailAddress;
 }
 
-void Contact::set_phoneNumber(std::string phoneNumber)
+void        Contact::set_phoneNumber(std::string phoneNumber)
 { 
     _phoneNumber = phoneNumber;
 }
 
-void Contact::set_birthdayDate(std::string birthdayDate)
+void        Contact::set_birthdayDate(std::string birthdayDate)
 { 
     _birthdayDate = birthdayDate;
 }
 
-void Contact::set_favoriteMeal(std::string favoriteMeal)
+void        Contact::set_favoriteMeal(std::string favoriteMeal)
 { 
     _favoriteMeal = favoriteMeal;
 }
 
-void Contact::set_underwearColor(std::string underwearColor)
+void        Contact::set_underwearColor(std::string underwearColor)
 { 
     _underwearColor = underwearColor;
 }
 
-void Contact::set_darkestSecret(std::string darkestSecret)
+void        Contact::set_darkestSecret(std::string darkestSecret)
 { 
     _darkestSecret = darkestSecret;
 }

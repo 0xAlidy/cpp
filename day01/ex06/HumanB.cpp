@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/01 15:57:01 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 16:41:45 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "HumanB.hpp"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+HumanB::HumanB(std::string name): _name(name){}
 
-const int   NB_CONTACT = 8;
+HumanB::~HumanB(void){}
 
-void        search_contact(int nb, Contact *tab);
+void    HumanB::attack(void) const
+{
+    std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+}
 
-#endif
+void    HumanB::setWeapon(Weapon &weapon)
+{
+    _weapon = &weapon;
+}

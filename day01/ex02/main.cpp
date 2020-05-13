@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/01 09:27:59 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 10:58:31 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "ZombieEvent.hpp"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+int main()
+{
+    Zombie      *zombie;
+    ZombieEvent event;
 
-const int   NB_CONTACT = 8;
-
-void        search_contact(int nb, Contact *tab);
-
-#endif
+    srand(time(NULL));
+    zombie = event.randomChump();
+    zombie->announce();
+    delete zombie;
+    event.set_zombieType("runner");
+    zombie = event.randomChump();
+    zombie->announce();
+    delete zombie;
+    return (0);
+}

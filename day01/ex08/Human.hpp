@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/02 15:47:11 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/02 15:48:09 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+#include <iostream>
+#include <string>
 
-const int   NB_CONTACT = 8;
+class Human
+{
+    private:
 
-void        search_contact(int nb, Contact *tab);
+    void meleeAttack(std::string const & target);
+    void rangedAttack(std::string const & target);
+    void intimidatingShout(std::string const & target);
+
+    public:
+    
+    void action(std::string const & action_name, std::string const & target);
+};
 
 #endif

@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/01 09:55:08 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 14:26:13 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-# include <iostream>
 # include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+# include <iostream>
+# include <cstdlib>
 
-const int   NB_CONTACT = 8;
+class Zombie
+{
+    public:
 
-void        search_contact(int nb, Contact *tab);
+    Zombie(std::string name, std::string type);
+    Zombie(void);
+    ~Zombie(void);
+    void        announce(void);
+    void        set_name(std::string name);
+    void        set_type(std::string type);
+
+    private:
+    
+    std::string _name;
+    std::string _type;
+};
 
 #endif

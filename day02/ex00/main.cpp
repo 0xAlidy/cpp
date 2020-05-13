@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/29 20:54:38 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/29 20:55:12 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "Fixed.hpp"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
-
-const int   NB_CONTACT = 8;
-
-void        search_contact(int nb, Contact *tab);
-
-#endif
+int main(void)
+{
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+    c = b;
+    
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return (0);
+}

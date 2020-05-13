@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/14 11:45:49 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/25 18:44:17 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef HEADER_HPP
+# define HEADER_HPP
 
-# include <iostream>
 # include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
-
-const int   NB_CONTACT = 8;
-
-void        search_contact(int nb, Contact *tab);
+# include <fstream>
+# include <iostream>
+# include <experimental/>
 
 #endif

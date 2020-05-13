@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 12:05:56 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 12:19:35 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2020/03/30 15:08:59 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ std::string truncate_string(std::string str)
     return (str);
 }
 
-void    print_exemple(void)
+void        print_exemple(void)
 {
     std::cout << "|" << std::setw(10) << "index" << "|";
     std::cout << std::setw(10) << "Prenom" << "|";
@@ -30,7 +30,7 @@ void    print_exemple(void)
     std::cout << std::setw(10) << "Surnom" << "|" << std::endl;
 }
 
-void    print_all_contacts(int nb, Contact *tab)
+void        print_all_contacts(int nb, Contact *tab)
 {
     int i;
 
@@ -46,7 +46,7 @@ void    print_all_contacts(int nb, Contact *tab)
     std::cout << std::endl;
 }
 
-void    print_details(int nb, Contact *tab)
+void        print_details(int nb, Contact *tab)
 {
     int index;
 
@@ -77,7 +77,7 @@ void    print_details(int nb, Contact *tab)
     std::cout << std::endl;
 }
 
-void    search_contact(int nb, Contact *tab)
+void        search_contact(int nb, Contact *tab)
 {
     print_exemple();
     print_all_contacts(nb, tab);

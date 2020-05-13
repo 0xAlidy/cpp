@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/03/31 11:15:24 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 09:27:29 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+# include "Zombie.hpp"
 
-const int   NB_CONTACT = 8;
+class ZombieEvent
+{
+    public:
 
-void        search_contact(int nb, Contact *tab);
+    ZombieEvent(void);
+    ~ZombieEvent(void);
+    void    set_zombieType(std::string type);
+    Zombie  *newZombie(std::string name);
+    Zombie  *randomChump(void);
+
+    private:
+
+    std::string _type;
+};
 
 #endif

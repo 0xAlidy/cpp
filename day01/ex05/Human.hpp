@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/01 14:15:58 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 15:16:13 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+# include "Brain.hpp"
 
-const int   NB_CONTACT = 8;
+class Human
+{
+    public:
 
-void        search_contact(int nb, Contact *tab);
+    Human(void);
+    ~Human(void);
+    std::string     identify(void) const;
+    const Brain     &getBrain(void) const;
+
+    private:
+
+    const Brain     _brain;
+};
 
 #endif

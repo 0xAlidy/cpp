@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/03/31 11:09:12 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 14:26:40 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+Zombie::Zombie(std::string name, std::string type): _name(name), _type(type){}
 
-const int   NB_CONTACT = 8;
+Zombie::~Zombie(void){}
 
-void        search_contact(int nb, Contact *tab);
-
-#endif
+void        Zombie::announce(void)
+{
+    std::cout << "<" << _name << " (" << _type << ")>";
+    std::cout << "  Braiiiiiiinnnssss ..." << std::endl;
+}

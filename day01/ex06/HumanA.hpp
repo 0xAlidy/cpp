@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/01 15:50:41 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 16:32:37 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef HUMANA_H
+# define HUMANA_H
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
-const int   NB_CONTACT = 8;
+class HumanA
+{
+    public:
+    
+    HumanA(std::string name, Weapon &weapon);
+    HumanA(void);
+    ~HumanA(void);
+    void        attack(void) const;
 
-void        search_contact(int nb, Contact *tab);
+    private:
+    
+    std::string _name;
+    Weapon      &_weapon;
+
+};
 
 #endif

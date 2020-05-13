@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/13 22:02:55 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/13 22:06:18 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "Human.hpp"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+int main()
+{
+    Human       human;
+    std::string target;
+    std::string action_name;    
 
-const int   NB_CONTACT = 8;
-
-void        search_contact(int nb, Contact *tab);
-
-#endif
+    target = "Robert";
+    action_name = "meleeAttack";
+    human.action(action_name, target);
+    action_name = "rangedAttack";
+    human.action(action_name, target);
+    action_name = "intimidatingShout";
+    human.action(action_name, target);
+    return (0);
+}

@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/05/01 13:03:44 by alidy             #+#    #+#             */
+/*   Updated: 2020/05/04 16:38:20 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-# include <iostream>
 # include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+# include <iostream>
+# include <stdlib.h>
+# include <time.h>
+# include "ClapTrap.hpp"
 
-const int   NB_CONTACT = 8;
+class ScavTrap : public ClapTrap
+{
+    public:
 
-void        search_contact(int nb, Contact *tab);
+    ScavTrap(std::string name);
+    ScavTrap(ScavTrap const& obj, std::string name);
+    ~ScavTrap(void);
+    void        challengeNewcomer(void);
+
+    protected:
+
+    std::string _challenges[7];
+};
 
 #endif

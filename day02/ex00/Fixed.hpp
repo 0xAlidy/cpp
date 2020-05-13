@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/29 20:12:42 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/29 20:50:59 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
 
-const int   NB_CONTACT = 8;
+class Fixed
+{
+    public:
 
-void        search_contact(int nb, Contact *tab);
+    Fixed(void);
+    Fixed(Fixed const& fixed);
+    ~Fixed(void);
+    Fixed&  operator=(Fixed const& fixed);
+    int     getRawBits(void) const;
+    void    setRawBits(const int raw);
+    
+    private:
+
+    int                 _number;
+    static const int    _bits = 8;
+};
 
 #endif

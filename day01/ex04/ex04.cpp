@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/01 11:24:09 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/01 11:27:29 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include <string>
+#include <iostream>
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+int main()
+{
+    std::string str;
+    std::string *pointer;
+    std::string &reference = str; // obligé
 
-const int   NB_CONTACT = 8;
-
-void        search_contact(int nb, Contact *tab);
-
-#endif
+    str = "HI THIS IS BRAIN";
+    pointer = &str;
+    std::cout << "Pointer: " << *pointer << std::endl;
+    std::cout << "Reference: " << reference << std::endl;
+    return (0);
+}

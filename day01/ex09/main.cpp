@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/04/14 11:24:51 by alidy             #+#    #+#             */
+/*   Updated: 2020/04/14 11:28:39 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "Logger.hpp"
 
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+int main()
+{
+    Logger logger("test.txt");
 
-const int   NB_CONTACT = 8;
-
-void        search_contact(int nb, Contact *tab);
-
-#endif
+    logger.log("file", "Axel vient de se connecter");
+    logger.log("consol", "Axel vient de se connecter");
+    logger.log("file", "Axel vient de se déconnecter");
+    logger.log("consol", "Axel vient de se déconnecter");
+    return (0);
+}

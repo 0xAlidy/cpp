@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Created: 2020/03/30 14:48:20 by alidy             #+#    #+#             */
+/*   Updated: 2020/03/31 11:39:48 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef PONY_HPP
+# define PONY_HPP
 
-# include <iostream>
 # include <string>
-# include <iomanip>
-# include <limits>
-# include "Contact.hpp"
+# include <iostream>
 
-const int   NB_CONTACT = 8;
+class Pony
+{
+    public:
+    
+    Pony(std::string name, int age, std::string color);
+    ~Pony(void);
+    std::string get_name(void);
+    std::string get_color(void);
+    int         get_age(void);
 
-void        search_contact(int nb, Contact *tab);
+    private:
 
-#endif
+    std::string _name;
+    std::string _color;
+    int         _age;
+};
+
+#endif 
