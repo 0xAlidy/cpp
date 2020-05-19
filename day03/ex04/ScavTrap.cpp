@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:16:05 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 16:37:56 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2020/05/19 10:17:56 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name, 100, 100, 100, 100, 1, 20, 15, 3)
 {
     srand(time(NULL));
-    _meleeAttackDamage = 20;
-    _rangedAttackDamage = 15;
-    _armorDamageReduction = 3;
     std::cout << "Un mysterieux SC4V-TP apparait ! Il s'appelle " << _name << "." << std::endl;
     _challenges[0] = "Essaye de battre le record du monde de jongles avec un rouleau de PQ !";
     _challenges[1] = "Es-tu capable de me faire une chorégraphie parfaite de la Macarena ?";
@@ -31,9 +28,6 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const& obj, std::string name): ClapTrap(obj, name)
 {
     srand(time(NULL));
-    _meleeAttackDamage = 20;
-    _rangedAttackDamage = 15;
-    _armorDamageReduction = 3;
     std::cout << "Un mysterieux SC4V-TP apparait ! Il s'appelle " << _name << "." << std::endl;
     std::cout << "Il ressemble étrangement à " << obj._name << "." << std::endl;
     std::copy(std::begin(obj._challenges), std::end(obj._challenges), std::begin(_challenges));

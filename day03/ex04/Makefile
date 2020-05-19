@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+         #
+#    By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/01 13:03:25 by alidy             #+#    #+#              #
-#    Updated: 2020/05/04 17:12:03 by alidy            ###   ########lyon.fr    #
+#    Updated: 2020/05/19 11:05:55 by alidy            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS_NAME		=		main.cpp 		\
 						ScavTrap.cpp	\
 						ClapTrap.cpp	\
 						NinjaTrap.cpp	\
+						SuperTrap.cpp	\
 						
 OBJS			=		${SRCS_NAME:.cpp=.o}
 

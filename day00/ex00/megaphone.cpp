@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 16:01:48 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/27 09:11:16 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2020/05/19 09:09:35 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ char    to_uppercase(char c)
 
 int     main(int argc, char const *argv[])
 {
-    int i;
-    int y;
+    int i = 0;
+    int y = 0;
 
-    i = 1;
-    y = 0;
     while (i < argc)
     {
         while (argv[i][y])
@@ -38,7 +36,6 @@ int     main(int argc, char const *argv[])
         i++;
     }
     if (argc == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    std::cout << "\n";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     return (0);
 }

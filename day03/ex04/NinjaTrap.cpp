@@ -12,27 +12,13 @@
 
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap(std::string name): ClapTrap(name)
+NinjaTrap::NinjaTrap(std::string name): ClapTrap(name, 60, 60, 120, 120, 1, 60, 5, 0)
 {
-    _hitPoints = 60; 
-    _maxHitPoints = 60;
-    _energyPoints = 120;
-    _maxEnergyPoints = 120;
-    _meleeAttackDamage = 60;
-    _rangedAttackDamage = 5;
-    _armorDamageReduction = 0;
-    std::cout << "On ne l'a pas vu venir pusique c'est un NinjaTrap ! Il s'appelle " << _name << "." << std::endl;
+    std::cout << "On ne l'a pas vu venir puisque c'est un NinjaTrap ! Il s'appelle " << _name << "." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const& obj, std::string name): ClapTrap(obj, name)
 {
-    _hitPoints = 60; 
-    _maxHitPoints = 60;
-    _energyPoints = 120;
-    _maxEnergyPoints = 120;
-    _meleeAttackDamage = 60;
-    _rangedAttackDamage = 5;
-    _armorDamageReduction = 0;
     std::cout << "On ne l'a pas vu venir puisque c'est un NinjaTrap ! Il s'appelle " << _name << "." << std::endl;
     std::cout << "C'est une copie conforme de " << obj._name << "." << std::endl; 
 }

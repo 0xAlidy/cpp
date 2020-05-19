@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 15:06:08 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 15:47:34 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2020/05/19 11:17:42 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoints(100),
 _energyPoints(100), _maxEnergyPoints(100), _level(1), _meleeAttackDamage(30),
 _rangedAttackDamage(30), _armorDamageReduction(5)
+{
+    std::cout << "On l'attendait tous et le voici ! Un CL4P-TR4P du nom de " << _name << "." << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, int hit, int maxHit, int energy, int maxEnergy, int lvl, int melee, int ranged, int armor): 
+_name(name), _hitPoints(hit), _maxHitPoints(maxHit),
+_energyPoints(energy), _maxEnergyPoints(maxEnergy), _level(lvl), _meleeAttackDamage(melee),
+_rangedAttackDamage(ranged), _armorDamageReduction(armor)
 {
     std::cout << "On l'attendait tous et le voici ! Un CL4P-TR4P du nom de " << _name << "." << std::endl;
 }
@@ -55,7 +63,7 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const& obj)
     return (*this);
 }
 
-void        ClapTrap::RangedAttack(std::string const& target)
+void        ClapTrap::rangedAttack(std::string const& target)
 {
     std::cout << _name << " attaque " << target << " à distance, causant "
     << _rangedAttackDamage << " points de dégâts !" << std::endl;
