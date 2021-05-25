@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 16:01:48 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/19 09:09:35 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/25 15:37:27 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char    to_uppercase(char c)
 
 int     main(int argc, char const *argv[])
 {
-    int i = 0;
+    int i = 1;
     int y = 0;
 
     while (i < argc)
