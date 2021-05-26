@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 09:57:31 by alidy             #+#    #+#             */
-/*   Updated: 2020/04/01 14:26:23 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/26 16:26:39 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ std::string  ZombieHorde::randomType(void)
 
 void        ZombieHorde::announce(void)
 {
-    int i;
-
-    i = 0;
     for (int i = 0; i < _count; i++)
     {
         _zombies[i].announce();

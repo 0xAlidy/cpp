@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 18:53:04 by alidy             #+#    #+#             */
-/*   Updated: 2020/04/02 15:42:40 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/26 16:58:31 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
     s2 = argv[3];
     if (s1.empty() || s2.empty())
     {
-        std::cout << "Erreur, les chaines de caracteres spécifiées ne peuvent pas etre vide:" << std::endl;
+        std::cout << "Erreur, les chaines de caracteres spécifiées ne peuvent pas etre vide !" << std::endl;
         return (0);
     }
     newFile.open(filename + ".replace");

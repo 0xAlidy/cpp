@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+         #
+#    By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/14 11:29:12 by alidy             #+#    #+#              #
-#    Updated: 2020/04/14 11:33:25 by alidy            ###   ########lyon.fr    #
+#    Updated: 2021/05/26 14:49:39 by alidy            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RM				=		rm -f
 
 CC				=		clang++
 
-FLAGS			=		-Wall -Wextra -Werror
+FLAGS			=		-Wall -Wextra -Werror -std=c++98
 
 all:					$(NAME)
 
