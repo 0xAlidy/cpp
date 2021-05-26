@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search_cmd.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 12:05:56 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:59 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/26 12:51:40 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void        print_details(int nb, Contact *tab)
     std::cin >> index;
     if (index < 0 || index >= nb || !std::cin)
     {
-        std::cout << "L'index est invalide, retour à l'acceuil ..." << std::endl;
+        std::cout << "L'index est invalide, retour à l'accueil ..." << std::endl;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }

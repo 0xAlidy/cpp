@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/19 12:40:18 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:25 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/26 13:19:48 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 # include <string>
 # include <iomanip>
 # include <limits>
+# include <cstring>
 # include "Contact.hpp"
 
 const int   NB_CONTACT = 8;
 
 void        search_contact(int nb, Contact *tab);
+Contact     add_contact(void);
 
 #endif

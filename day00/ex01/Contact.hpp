@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 15:37:02 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 15:08:08 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/26 13:19:41 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class Contact
     std::string get_favoriteMeal(void);
     std::string get_underwearColor(void);
     std::string get_darkestSecret(void);
+    Contact     add_Contact(void);
     
     private:
     

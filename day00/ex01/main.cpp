@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/19 12:03:07 by alidy             #+#    #+#             */
-/*   Updated: 2020/03/30 13:27:49 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/26 13:13:23 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string toupper(std::string str)
     i = 0;
     while (str[i])
     {
-        if (str[i] >= 'a' || str[i] <= 'z')
+        if (str[i] >= 'a' && str[i] <= 'z')
             res.push_back(str[i] - 32);
         else
             res.push_back(str[i]);
@@ -56,10 +56,10 @@ int    input_user()
     return (1);
 }
 
-Contact add_contact()
+Contact add_contact(void)
 {
     Contact     res;
-    std::string  buf;
+    std::string buf;
 
     std::cout << "Veuillez remplir les informations suivantes pour ajouter un nouveau contact" << std::endl;
     std::cout << "Prenom:" << std::endl;
