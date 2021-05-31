@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 17:52:03 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 16:39:40 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:35:17 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void    ex00(void)
 {
-    FragTrap p1("Walle");
+       FragTrap p1("Walle");
     std::cout << std::endl;
     FragTrap p2(p1, "Robocop");
     std::string pnj = "Epouvantail";
@@ -27,17 +27,17 @@ void    ex00(void)
     std::cout << std::endl;
     p2.RangedAttack(p1.getName());
     std::cout << std::endl;
-    p1.takeDamage(30);
+    p1.takeDamage(20);
     std::cout << std::endl;
-    p1.beRepaired(50); // + que le max
+    p1.beRepaired(-20); // non valide
+    std::cout << std::endl;
+    p1.beRepaired(20); // + que le max
     std::cout << std::endl;
     p2.beRepaired(20); // - que le max
     std::cout << std::endl;
-    p1.vaulthunter_dot_exe(p2.getName());
-    std::cout << std::endl;
     p2.takeDamage(90); // + que le min
     std::cout << std::endl;
-    p1.vaulthunter_dot_exe(p2.getName());
+    p2.takeDamage(-500); // non valide
     std::cout << std::endl;
     p2.takeDamage(500); // - que le min
     std::cout << std::endl;
@@ -46,6 +46,10 @@ void    ex00(void)
     p1.vaulthunter_dot_exe(pnj);
     std::cout << std::endl;
     p1.vaulthunter_dot_exe(pnj);
+    std::cout << std::endl;
+    p1.vaulthunter_dot_exe(pnj);
+    std::cout << std::endl;
+    p1.vaulthunter_dot_exe(pnj); // Plus d'energie
     std::cout << std::endl;
 }
 

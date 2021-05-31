@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:03:44 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/01 20:35:15 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:28:17 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class FragTrap
 {
     public:
 
+    FragTrap(void);
     FragTrap(std::string name);
     FragTrap(FragTrap const& obj, std::string name);
     ~FragTrap(void);
@@ -39,7 +40,7 @@ class FragTrap
     void        bullying(std::string const& target);
     void        shoes(std::string const& target);
 
-    protected:
+    private:
     
     std::string _name;
     int         _hitPoints;

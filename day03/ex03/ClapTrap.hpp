@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 15:00:21 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/19 11:17:55 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:49:14 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class ClapTrap
 {
     public:
     
+    ClapTrap(void);
     ClapTrap(std::string name);
     ClapTrap(std::string name, int hit, int maxHit, int energy, int maxEnergy, int lvl, int melee, int ranged, int armor);
     ClapTrap(ClapTrap const& obj, std::string name);

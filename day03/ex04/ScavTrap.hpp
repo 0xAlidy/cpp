@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:03:44 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 16:38:20 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 16:26:45 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class ScavTrap : public ClapTrap
 {
     public:
 
+    ScavTrap(void);
     ScavTrap(std::string name);
     ScavTrap(ScavTrap const& obj, std::string name);
     ~ScavTrap(void);
+    ScavTrap&   operator=(ScavTrap const& obj);
     void        challengeNewcomer(void);
 
     protected:

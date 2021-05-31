@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 17:52:03 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/19 11:17:05 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 16:36:41 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
     SuperTrap   perso("Jack");
     ClapTrap    pnj("Bot");
 
+    std::cout << std::endl;
     perso.ninjaShoeBox(pnj);
     std::cout << std::endl;
     perso.vaulthunter_dot_exe(pnj.getName());

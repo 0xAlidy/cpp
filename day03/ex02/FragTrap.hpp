@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:03:44 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 16:45:33 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:47:47 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class FragTrap : public ClapTrap
 {
     public:
 
+    FragTrap(void);
     FragTrap(std::string name);
     FragTrap(FragTrap const& obj, std::string name);
     ~FragTrap(void);
+    FragTrap&   operator=(FragTrap const& obj);
     void        vaulthunter_dot_exe(std::string const& target);
     void        randomAttack(std::string const& target);
     void        foamSword(std::string const& target);

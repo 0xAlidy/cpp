@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 09:13:00 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/19 11:15:02 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 16:26:24 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ class SuperTrap: public FragTrap, public NinjaTrap
 {
     public:
 
+    SuperTrap(void);
     SuperTrap(std::string name);
     SuperTrap(SuperTrap const& obj, std::string name);
     ~SuperTrap(void);
+    SuperTrap&   operator=(SuperTrap const& obj);
     void        rangedAttack(std::string const& target);
     void        meleeAttack(std::string const& target);
 };

@@ -12,6 +12,11 @@
 
 #include "NinjaTrap.hpp"
 
+NinjaTrap::NinjaTrap(void): ClapTrap("Defaut", 60, 60, 120, 120, 1, 60, 5, 0)
+{
+    std::cout << "On ne l'a pas vu venir pusique c'est un NinjaTrap ! Il s'appelle " << _name << "." << std::endl;
+}
+
 NinjaTrap::NinjaTrap(std::string name): ClapTrap(name, 60, 60, 120, 120, 1, 60, 5, 0)
 {
     std::cout << "On ne l'a pas vu venir pusique c'est un NinjaTrap ! Il s'appelle " << _name << "." << std::endl;
@@ -48,6 +53,6 @@ void    NinjaTrap::ninjaShoeBox(ScavTrap &target)
 
 void    NinjaTrap::ninjaShoeBox(NinjaTrap &target)
 {
-    std::cout << "<NINJ4-TR4P> " << _name << " attaque un de ses frères : <NINJ4-TR4P> " << target.getName() << " au CAC."<< std::endl;
+    std::cout << "<NINJ4-TR4P> " << _name << " attaque un de ses frères <NINJ4-TR4P> " << target.getName() << " au CAC."<< std::endl;
     target.takeDamage(_meleeAttackDamage);
 }

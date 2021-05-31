@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:03:44 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/18 09:21:21 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 16:27:01 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class FragTrap : public virtual ClapTrap
 {
     public:
 
+    FragTrap(void);
     FragTrap(std::string name);
     FragTrap(FragTrap const& obj, std::string name);
     ~FragTrap(void);
+    FragTrap&   operator=(FragTrap const& obj);
     void        vaulthunter_dot_exe(std::string const& target);
     void        randomAttack(std::string const& target);
     void        foamSword(std::string const& target);

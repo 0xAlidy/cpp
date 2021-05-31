@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:03:44 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/18 09:21:14 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 16:26:52 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ class NinjaTrap : public virtual ClapTrap
 {
     public:
 
+    NinjaTrap(void);
     NinjaTrap(std::string name);
     NinjaTrap(NinjaTrap const& obj, std::string name);
     ~NinjaTrap(void);
-    void    ninjaShoeBox(ClapTrap &target);
-    void    ninjaShoeBox(FragTrap &target);
-    void    ninjaShoeBox(ScavTrap &target);
-    void    ninjaShoeBox(NinjaTrap &target);
+    NinjaTrap&  operator=(NinjaTrap const& obj);
+    void        ninjaShoeBox(ClapTrap &target);
+    void        ninjaShoeBox(FragTrap &target);
+    void        ninjaShoeBox(ScavTrap &target);
+    void        ninjaShoeBox(NinjaTrap &target);
 };
 
 #endif

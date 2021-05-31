@@ -3,17 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:16:05 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 16:40:15 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:27:40 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void): _name("Defaut"), _hitPoints(100), _maxHitPoints(100),
+_energyPoints(50), _maxEnergyPoints(50), _level(1), _meleeAttackDamage(20),
+_rangedAttackDamage(15), _armorDamageReduction(3)
+{
+    srand(time(NULL));
+    std::cout << "Un mysterieux SC4V-TP apparait ! Il s'appelle " << _name << "." << std::endl;
+    _challenges[0] = "Essaye de battre le record du monde de jongles avec un rouleau de PQ !";
+    _challenges[1] = "Es-tu capable de me faire une chorégraphie parfaite de la Macarena ?";
+    _challenges[2] = "Le fameux bottle flip challenge en moins de 3 essaies ?";
+    _challenges[3] = "Je sais que les pompes à une main sont faciles pour toi, mais est ce que sans les mains tu pourrais y arriver ?";
+    _challenges[4] = "On va rendre service à tout le monde, un roi du silence jusqu'à la fin de ta vie !";
+    _challenges[5] = "J'ai pas fini mon gouté, tu penses que cette banane pourrait passer dans ton nez ?";
+    _challenges[6] = "Celui-la c'est le plus facile ! Tu dois rester en apnée pendant 20 minutes.";
+}
+
 ScavTrap::ScavTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoints(100),
-_energyPoints(100), _maxEnergyPoints(100), _level(1), _meleeAttackDamage(20),
+_energyPoints(50), _maxEnergyPoints(50), _level(1), _meleeAttackDamage(20),
 _rangedAttackDamage(15), _armorDamageReduction(3)
 {
     srand(time(NULL));
@@ -79,8 +94,10 @@ void        ScavTrap::meleeAttack(std::string const& target)
 
 void        ScavTrap::takeDamage(unsigned int amount)
 {
-    int dmg = amount - _armorDamageReduction;
-    if (_hitPoints - dmg < 0)
+   int dmg = (int)amount - _armorDamageReduction;
+    if (dmg < 0)
+        dmg = 0;
+    else if (_hitPoints - dmg < 0)
         dmg = _hitPoints;
     _hitPoints -= dmg;
     std::cout << "<SC4V-TP> " << _name << " vient de subir " << dmg << " points de dégâts !" << std::endl;
@@ -92,7 +109,9 @@ void        ScavTrap::takeDamage(unsigned int amount)
 
 void        ScavTrap::beRepaired(unsigned int amount)
 {
-    if (_hitPoints + amount > _maxHitPoints)
+    if ((int)amount < 0)
+        amount = 0;
+    else if (_hitPoints + amount > _maxHitPoints)
         amount = _maxHitPoints - _hitPoints;
     _hitPoints += amount;
     std::cout << "<SC4V-TP> " << _name << " vient de regagner " << amount

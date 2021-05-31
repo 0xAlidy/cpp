@@ -6,15 +6,23 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:16:05 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/19 09:30:47 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:23:12 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void): _name("Defaut"), _hitPoints(100), _maxHitPoints(100),
+_energyPoints(100), _maxEnergyPoints(100), _level(1), _meleeAttackDamage(30),
+_rangedAttackDamage(20), _armorDamageReduction(5)
+{
+    srand(time(NULL));
+    std::cout << "Un FR4G-TP sauvage apparait ! Il s'appelle " << _name << "." << std::endl;
+}
+
 FragTrap::FragTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoints(100),
 _energyPoints(100), _maxEnergyPoints(100), _level(1), _meleeAttackDamage(30),
-_rangedAttackDamage(30), _armorDamageReduction(5)
+_rangedAttackDamage(20), _armorDamageReduction(5)
 {
     srand(time(NULL));
     std::cout << "Un FR4G-TP sauvage apparait ! Il s'appelle " << _name << "." << std::endl;
@@ -71,8 +79,11 @@ void        FragTrap::meleeAttack(std::string const& target)
 
 void        FragTrap::takeDamage(unsigned int amount)
 {
-    int dmg = amount - _armorDamageReduction;
-    if (_hitPoints - dmg < 0)
+    
+    int dmg = (int)amount - _armorDamageReduction;
+    if (dmg < 0)
+        dmg = 0;
+    else if (_hitPoints - dmg < 0)
         dmg = _hitPoints;
     _hitPoints -= dmg;
     std::cout << "<FR4G-TP> " << _name << " vient de subir " << dmg << " points de dégâts !" << std::endl;
@@ -84,7 +95,9 @@ void        FragTrap::takeDamage(unsigned int amount)
 
 void        FragTrap::beRepaired(unsigned int amount)
 {
-    if (_hitPoints + amount > _maxHitPoints)
+    if ((int)amount < 0)
+        amount = 0;
+    else if (_hitPoints + amount > _maxHitPoints)
         amount = _maxHitPoints - _hitPoints;
     _hitPoints += amount;
     std::cout << "<FR4G-TP> " << _name << " vient de regagner " << amount
@@ -124,7 +137,7 @@ void    FragTrap::randomAttack(std::string const& target)
         &FragTrap::bullying,
         &FragTrap::shoes
     };
-    (this->*ptr[rng])(target);
+    return (this->*ptr[rng])(target);
 }
 
 void    FragTrap::foamSword(std::string const& target)

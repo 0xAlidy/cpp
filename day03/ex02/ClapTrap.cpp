@@ -6,15 +6,22 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 15:06:08 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/19 11:18:03 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:49:20 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void): _name("Defaut"), _hitPoints(100), _maxHitPoints(100),
+_energyPoints(100), _maxEnergyPoints(100), _level(1), _meleeAttackDamage(30),
+_rangedAttackDamage(20), _armorDamageReduction(5)
+{
+    std::cout << "On l'attendait tous et le voici ! Un CL4P-TR4P du nom de " << _name << "." << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoints(100),
 _energyPoints(100), _maxEnergyPoints(100), _level(1), _meleeAttackDamage(30),
-_rangedAttackDamage(30), _armorDamageReduction(5)
+_rangedAttackDamage(20), _armorDamageReduction(5)
 {
     std::cout << "On l'attendait tous et le voici ! Un CL4P-TR4P du nom de " << _name << "." << std::endl;
 }
@@ -77,8 +84,10 @@ void        ClapTrap::meleeAttack(std::string const& target)
 
 void        ClapTrap::takeDamage(unsigned int amount)
 {
-    int dmg = amount - _armorDamageReduction;
-    if (_hitPoints - dmg < 0)
+    int dmg = (int)amount - _armorDamageReduction;
+    if (dmg < 0)
+        dmg = 0;
+    else if (_hitPoints - dmg < 0)
         dmg = _hitPoints;
     _hitPoints -= dmg;
     std::cout << _name << " vient de subir " << dmg << " points de dégâts !" << std::endl;
@@ -90,7 +99,9 @@ void        ClapTrap::takeDamage(unsigned int amount)
 
 void        ClapTrap::beRepaired(unsigned int amount)
 {
-    if (_hitPoints + amount > _maxHitPoints)
+    if ((int)amount < 0)
+        amount = 0;
+    else if (_hitPoints + amount > _maxHitPoints)
         amount = _maxHitPoints - _hitPoints;
     _hitPoints += amount;
     std::cout << _name << " vient de regagner " << amount

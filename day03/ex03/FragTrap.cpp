@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alidy <alidy@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:16:05 by alidy             #+#    #+#             */
-/*   Updated: 2020/05/04 15:56:15 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/05/31 15:49:34 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void): ClapTrap()
+{
+    srand(time(NULL));
+    std::cout << "Un FR4G-TP sauvage apparait ! Il s'appelle " << _name << "." << std::endl;
+}
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
@@ -30,7 +36,6 @@ FragTrap::~FragTrap(void)
     std::cout << "La terrible nouvelle vient de tomber notre chère <FR4G-TP> " << _name << " a explosé !" << std::endl;
 }
 
-/*
 FragTrap&   FragTrap::operator=(FragTrap const& obj)
 {
     if (this != &obj)
@@ -46,7 +51,7 @@ FragTrap&   FragTrap::operator=(FragTrap const& obj)
         _armorDamageReduction = obj._armorDamageReduction;
     }
     return (*this);
-}*/
+}
 
 void        FragTrap::vaulthunter_dot_exe(std::string const& target)
 {
