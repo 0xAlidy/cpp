@@ -6,14 +6,15 @@
 #    By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/01 13:03:25 by alidy             #+#    #+#              #
-#    Updated: 2021/06/01 16:52:57 by alidy            ###   ########lyon.fr    #
+#    Updated: 2021/06/01 18:05:24 by alidy            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS_NAME		=		main.cpp 		\
 						Sorcerer.cpp	\
 						Victim.cpp		\
-						Peon.cpp		
+						Peon.cpp		\
+						Noob.cpp
 						
 OBJS			=		${SRCS_NAME:.cpp=.o}
 

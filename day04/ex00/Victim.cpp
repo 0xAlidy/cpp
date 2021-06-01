@@ -12,11 +12,6 @@
 
 #include "Victim.hpp"
 
-Victim::Victim(void)
-{
-
-}
-
 Victim::Victim(std::string name): _name(name)
 {
     std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;

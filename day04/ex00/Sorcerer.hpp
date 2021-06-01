@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 14:49:13 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/01 16:52:25 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/01 18:04:42 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Sorcerer
 {
     public:
 
+    Sorcerer(void);
     Sorcerer(std::string name, std::string title);
     Sorcerer(const Sorcerer &obj);
     ~Sorcerer(void);
@@ -30,8 +31,7 @@ class Sorcerer
     void        polymorph(const Victim &target) const;
 
     private:
-    
-    Sorcerer(void);
+
     std::string _name;
     std::string _title;
 };

@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                        :+:      :+:    :+:   */
+/*   Noob.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 15:30:50 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/01 16:11:11 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/01 17:11:26 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/01 18:07:21 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef NOOB_HPP
+# define NOOB_HPP
 
 # include <string>
 # include <iostream>
+# include "Victim.hpp"
 
-class Victim
+class Noob: public Victim
 {
     public:
 
-    Victim(void);
-    Victim(std::string name);
-    Victim(const Victim &obj);
-    virtual ~Victim(void);
-    Victim          &operator=(const Victim &obj);
-    std::string     getName(void) const;
-    virtual void    getPolymorphed(void) const;
-
-    protected:
-
-    std::string _name;
+    Noob(void);
+    Noob(std::string name);
+    Noob(const Noob &obj);
+    virtual ~Noob(void);
+    Noob    &operator=(const Noob &obj);
+    void    getPolymorphed(void) const;
 };
 
-std::ostream    &operator<<(std::ostream &os, const Victim &obj);
+std::ostream    &operator<<(std::ostream &os, const Noob &obj);
 
 #endif

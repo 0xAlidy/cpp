@@ -6,16 +6,11 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 14:48:00 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/01 16:52:43 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/01 17:05:54 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
-
-Sorcerer::Sorcerer(void)
-{
-
-}
 
 Sorcerer::Sorcerer(std::string name, std::string title): _name(name), _title(title)
 {

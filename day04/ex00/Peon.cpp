@@ -6,16 +6,11 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 16:13:55 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/01 16:48:39 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/01 17:06:16 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
-
-Peon::Peon(void)
-{
-
-}
 
 Peon::Peon(std::string name): Victim(name)
 {
