@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Noob.hpp                                           :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 17:11:26 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/02 12:27:02 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/02 10:43:18 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/02 13:53:47 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOOB_HPP
-# define NOOB_HPP
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
 # include <string>
 # include <iostream>
-# include "Victim.hpp"
 
-class Noob: public Victim
+class Enemy
 {
     public:
 
-    Noob(void);
-    Noob(std::string name);
-    Noob(const Noob &obj);
-    virtual ~Noob(void);
-    Noob    &operator=(const Noob &obj);
-    void    getPolymorphed(void) const;
-};
+    Enemy(void);
+    Enemy(int hp, const std::string &type);
+    Enemy(const Enemy &obj);
+    virtual ~Enemy(void);
+    Enemy               &operator=(const Enemy &obj);
+    const std::string   getType(void) const;
+    int                 getHP(void) const;
+    virtual void        takeDamage(int damage);      
 
-std::ostream    &operator<<(std::ostream &os, const Noob &obj);
+    protected:
+
+    std::string   _type;
+    int           _hp;
+};
 
 #endif

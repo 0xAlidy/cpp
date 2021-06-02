@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Noob.hpp                                           :+:      :+:    :+:   */
+/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 17:11:26 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/02 12:27:02 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/02 12:12:00 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/02 15:02:57 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NOOB_HPP
-# define NOOB_HPP
+#ifndef SUPERMUTANT_HPP
+# define SUPERMUTANT_HPP
 
 # include <string>
 # include <iostream>
-# include "Victim.hpp"
+# include "Enemy.hpp"
 
-class Noob: public Victim
+class SuperMutant: public Enemy
 {
     public:
 
-    Noob(void);
-    Noob(std::string name);
-    Noob(const Noob &obj);
-    virtual ~Noob(void);
-    Noob    &operator=(const Noob &obj);
-    void    getPolymorphed(void) const;
+    SuperMutant(void);
+    SuperMutant(const SuperMutant &obj);
+    virtual ~SuperMutant(void);
+    SuperMutant &operator=(const SuperMutant &obj);
+    void        takeDamage(int damage);
 };
-
-std::ostream    &operator<<(std::ostream &os, const Noob &obj);
 
 #endif
