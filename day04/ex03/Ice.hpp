@@ -1,5 +1,5 @@
-#ifndef ICE.HPP
-# define ICE.HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 # include <iostream>
 # include "AMateria.hpp"
 
