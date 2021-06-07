@@ -4,12 +4,14 @@
 # include <exception>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
     public:
 
     Form(void);
-    Form(const std::string name);
+    Form(const std::string name, const int execGrade, const int signGrade);
     Form(const Form& obj);
     ~Form(void);
     Form& operator=(const Form& obj);

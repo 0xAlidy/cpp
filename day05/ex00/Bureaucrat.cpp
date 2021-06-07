@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name)
         _grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& obj): _name(obj.name), _grade(obj._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& obj): _name(obj._name), _grade(obj._grade)
 {
 
 }

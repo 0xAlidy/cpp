@@ -1,16 +1,14 @@
 #include "Form.hpp"
 
-Form::Form(const std::string name, const int execGrade, const int signGrade): _name(name), _isSign(false)
+Form::Form(const std::string name, const int execGrade, const int signGrade): _name(name), _isSign(false), _execGrade(execGrade), _signGrade(signGrade)
 {
     if (signGrade > 150 || execGrade > 150)
         throw GradeTooLowException();
     else if (signGrade < 1 || execGrade < 1)
         throw GradeTooHighException();
-    _execGrade = execGrade;
-    _signGrade = signGrade;
 }
 
-Form::Form(const Form& obj): _name(obj.name), _isSign(obj._isSign), _execGrade(obj._execGrade), _signGrade(obj._signGrade)
+Form::Form(const Form& obj): _name(obj._name), _isSign(obj._isSign), _execGrade(obj._execGrade), _signGrade(obj._signGrade)
 {
 
 }
@@ -65,6 +63,6 @@ const char* Form::GradeTooLowException::what() const throw()
 std::ostream& operator<<(std::ostream& os, const Form& obj)
 {
     os << obj.getName() << " form requires a grade of " << obj.getSignGrade() << " to sign, " << obj.getExecGrade()
-    << " to execute, and is currently" << (obj.getSigned() ? " " : " not ") << "signed";
+    << " to execute, and is currently" << (obj.getIsSign() ? " " : " not ") << "signed";
 	return (os);
 }
