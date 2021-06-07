@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:00:15 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/04 13:57:37 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/07 10:41:36 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,7 @@ Character::Character(const Character& obj): _name(obj._name)
 
 Character::~Character(void)
 {
-    for(int i = 0; i < SLOTS; i++)
-    {
-        if (_inventory[i])
-            delete _inventory[i];
-    }
+    
 }
 
 Character& Character::operator=(const Character& obj)
@@ -41,13 +37,8 @@ Character& Character::operator=(const Character& obj)
     _name = obj._name;
     for(int i = 0; i < SLOTS; i++)
     {
-        if (_inventory[i])
-            delete _inventory[i];
-    }
-    for(int i = 0; i < SLOTS; i++)
-    {
-        if (obj._inventory[i])
-            _inventory[i] = obj._inventory[i]->clone();
+        _inventory[i] = NULL;
+        _inventory[i] = obj._inventory[i]->clone();
     }
     return  (*this);
 }

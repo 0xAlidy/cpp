@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 16:49:19 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/01 18:04:36 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/07 10:50:16 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 int main()
 {
-    //Sorcerer test;
     Sorcerer robert("Robert", "the Magnificent");
     Victim jim("Jimmy");
     Peon joe("Joe");

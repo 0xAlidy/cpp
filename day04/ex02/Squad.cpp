@@ -36,7 +36,6 @@ Squad& Squad::operator=(const Squad &obj)
         delete temp;
     }
     _squad = NULL;
-    
     for (int i = 0; i < obj._count; i++)
         this->push(obj.getUnit(i)->clone());
     _count = obj._count;
