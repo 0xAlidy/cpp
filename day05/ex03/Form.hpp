@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 13:57:46 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/07 15:02:33 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/07 13:57:17 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/07 16:29:55 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Form
     Form(void);
     Form(const std::string name, const int signGrade, const int execGrade);
     Form(const Form& obj);
-    ~Form(void);
+    virtual ~Form(void);
     Form& operator=(const Form& obj);
 
     const std::string&  getName(void) const;
@@ -35,6 +35,7 @@ class Form
 
     void                beSigned(const Bureaucrat& obj);
     void                signForm(bool res);
+    virtual void        execute(const Bureaucrat& executor) const = 0;
 
     class GradeTooHighException : public std::exception
     {
@@ -43,6 +44,12 @@ class Form
     };
 
     class GradeTooLowException : public std::exception
+    {
+        public:
+            virtual const char* what() const throw();
+    };
+
+    class NotSigned : public std::exception
     {
         public:
             virtual const char* what() const throw();

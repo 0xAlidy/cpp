@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 13:57:50 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/07 15:02:21 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/07 13:57:07 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/07 17:55:38 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,14 @@ const char* Form::GradeTooLowException::what() const throw()
 	return ("Grade is too low !");
 }
 
+const char* Form::NotSigned::what() const throw()
+{
+	return ("Form is not signed !");
+}
+
 std::ostream& operator<<(std::ostream& os, const Form& obj)
 {
     os << obj.getName() << " form requires a grade of " << obj.getSignGrade() << " to sign, " << obj.getExecGrade()
-    << " to execute, and is currently" << (obj.getIsSign() ? " " : " not ") << "signed";
+    << " to execute, and is currently" << (obj.getIsSign() ? " " : " not ") << "signed" << std::endl;
 	return (os);
 }

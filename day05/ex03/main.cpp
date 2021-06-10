@@ -5,13 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 13:57:41 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:42 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/07 13:57:22 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/08 13:00:48 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int			main( void )
 {
@@ -68,36 +72,59 @@ int			main( void )
 	std::cout << Jones3 << std::endl;
 
 	std::cout << "---Form---" << std::endl;
+	ShrubberyCreationForm sh("Home");
+	PresidentialPardonForm pr("Pres");
+	RobotomyRequestForm ro("Robot");
 	std::cout << std::endl;
+	std::cout << sh << pr << ro << std::endl;
+	std::cout << "SIGNED JONES" << std::endl;
+	std::cout << std::endl;
+	Jones.signForm(sh); 
+	Jones.signForm(ro);
+	Jones.signForm(pr);
+	std::cout << std::endl;
+	
+	std::cout << "SIGNED KEVIN" << std::endl;
+	std::cout << std::endl;
+	Kevin.signForm(sh);
+	Kevin.signForm(ro);
+	Kevin.signForm(pr);
+	std::cout << std::endl;
+
+	std::cout << "EXECUTE JONES" << std::endl;
+	std::cout << std::endl;
+	Jones.executeForm(sh);
+	Jones.executeForm(ro);
+	Jones.executeForm(pr);
+	std::cout << std::endl;
+
+	std::cout << "EXECUTE KEVIN" << std::endl;
+	std::cout << std::endl;
+	Kevin.executeForm(sh);
+	Kevin.executeForm(ro);
+	Kevin.executeForm(pr);
+	std::cout << std::endl;
+	std::cout << "---INTERN---" << std::endl;
 	try
 	{
-		std::cout << "Create form too high" << std::endl;
-		Form paperfalse("paperfalse", 0, 5);
+		Intern someRandomIntern;
+		Form* pp = someRandomIntern.makeForm("presidential pardon", "Bender");
+		std::cout << pp->getName() << std::endl;
+		Form* rq = someRandomIntern.makeForm("robotomy request", "Bender2");
+		std::cout << rq->getName() << std::endl;
+		/*Form* test = someRandomIntern.makeForm("test", "Test");
+		std::cout << test->getName() << std::endl;*/
+		Kevin.signForm(*pp);
+		Kevin.executeForm(*pp);
+		Kevin.signForm(*rq);
+		Kevin.executeForm(*rq);
+		delete (pp);
+		delete (rq);
+		//delete (test);
 	}
-	catch(std::exception& e)
+	catch (std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	try
-	{
-		std::cout << "Create form too low" << std::endl;
-		Form paperfalse2("paperfalse2", 160, 5);
-	}
-	catch(std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	Form paper("paper", 10, 5);
-	std::cout << "Try signed paper with Jones" << std::endl;
-	Jones.signForm(paper);
-	std::cout << paper << std::endl;
-	std::cout << "Try signed paper with Kevin" << std::endl;
-	Kevin.signForm(paper);
-	std::cout << paper << std::endl;
-	Form paper2 = paper;
-	std::cout << paper2 << std::endl;
-	Form paper3(paper);
-	std::cout << paper3 << std::endl;
 	return 0;
 }

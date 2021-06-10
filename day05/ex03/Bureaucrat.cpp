@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 13:58:11 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/07 13:58:12 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/07 13:57:31 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/08 10:53:09 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,33 @@ void    Bureaucrat::downGrade(void)
 	    _grade++;
 	else
 		throw GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signs " << form.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(const Form& form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executes " << form.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << _name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+	
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

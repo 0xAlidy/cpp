@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 13:57:57 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:58 by alidy            ###   ########lyon.fr   */
+/*   Created: 2021/06/07 13:57:27 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/07 17:40:26 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
     void                upGrade(void);
     void                downGrade(void);
     void	            signForm(Form& form);
+    void                executeForm (const Form& form);
 
     class GradeTooHighException : public std::exception
     {

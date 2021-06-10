@@ -6,16 +6,16 @@
 #    By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/01 13:03:25 by alidy             #+#    #+#              #
-#    Updated: 2021/06/07 13:58:22 by alidy            ###   ########lyon.fr    #
+#    Updated: 2021/06/09 10:55:34 by alidy            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_NAME		=		main.cpp 			\
-						Bureaucrat.cpp		
+SRCS_NAME		=		main.cpp				\
+						ScalarConversion.cpp
 						
 OBJS			=		${SRCS_NAME:.cpp=.o}
 
-NAME			=		a.out
+NAME			=		convert
 
 RM				=		rm -f
 
