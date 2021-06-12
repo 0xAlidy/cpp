@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 10:31:22 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/09 11:03:54 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/12 11:40:21 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class ScalarConversion
     
     // Methods
     double          stringToDouble(const char *str);
-    
+
     private:
 
     char        *_str;
