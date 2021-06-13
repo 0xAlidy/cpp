@@ -1,0 +1,31 @@
+# include "easyfind.hpp"
+
+int			main(void)
+{
+	std::vector<int> v;
+    int nb = 10;
+
+	v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+	try
+	{
+        easyfind(s, nb);
+		std::cout << "Find : " << nb << "in the vector !" << std::endl;
+	}
+	catch(std::string str)
+	{
+		std::cerr << str << std::endl;
+	}
+    nb++;
+	try
+	{
+		easyfind(s, nb);
+		std::cout << "Find : " << nb << "in the vector !" << std::endl;
+	}
+	catch(std::string str)
+	{
+		std::cerr << str << std::endl;
+	}
+}
