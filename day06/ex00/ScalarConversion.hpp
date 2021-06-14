@@ -12,8 +12,16 @@
 
 #ifndef SCALARCONVERSION_HPP
 # define SCALARCONVERSION_HPP
-# include <cstdlib>
 # include <iostream>
+# include <stdio.h>
+# include <iomanip>
+# include <exception>
+# include <string.h>
+# include <ctime>
+# include <cmath>
+# include <cstdlib>
+# include <limits>
+# include <sstream>
 
 class ScalarConversion
 {
@@ -21,26 +29,42 @@ class ScalarConversion
     
     // Coplien
     ScalarConversion(void);
-    ScalarConversion(char *str);
+    ScalarConversion(std::string str);
     ~ScalarConversion(void);
     ScalarConversion(const ScalarConversion& obj);
     ScalarConversion& operator=(const ScalarConversion& obj);
 
     // Getter
-    char            *getStr(void) const;
-    double          getNb(void) const;
+    std::string getStr(void) const;
 
     // Setter
-    void            setStr(char *str);
-    void            setNb(double nb);
+    void        setStr(std::string str);
     
     // Methods
-    double          stringToDouble(const char *str);
+    void        checkSpec(void);
+	void        printChar(void);
+	void        printInt(void);
+	void        printFloat(void);
+	void        printDouble(void);
+
+	// Exceptions
+	class NonDisplayable : public std::exception
+	{
+        public:
+
+		virtual const char* what() const throw();
+	};
+
+	class ImpossibleConvert : public std::exception
+	{
+        public:
+
+		virtual const char* what() const throw();
+	};
 
     private:
 
-    char        *_str;
-    double      _nb;
+    std::string _str;
 };
 
 #endif

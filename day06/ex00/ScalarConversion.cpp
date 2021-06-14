@@ -12,9 +12,9 @@
 
 #include "ScalarConversion.hpp"
 
-ScalarConversion::ScalarConversion(char *str): _str(str)
+ScalarConversion::ScalarConversion(std::string str): _str(str)
 {
-    _nb = stringToDouble(str);
+
 }
 
 ScalarConversion::~ScalarConversion(void)
@@ -22,7 +22,7 @@ ScalarConversion::~ScalarConversion(void)
 
 }
 
-ScalarConversion::ScalarConversion(const ScalarConversion& obj): _str(obj._str), _nb(obj._nb)
+ScalarConversion::ScalarConversion(const ScalarConversion& obj): _str(obj._str)
 {
 
 }
@@ -30,31 +30,86 @@ ScalarConversion::ScalarConversion(const ScalarConversion& obj): _str(obj._str),
 ScalarConversion&   ScalarConversion::operator=(const ScalarConversion& obj)
 {
     _str = obj._str;
-    _nb = obj._nb;
     return (*this);
 }
 
-char*   ScalarConversion::getStr(void) const
+std::string ScalarConversion::getStr(void) const
 {
     return (_str);
 }
 
-double  ScalarConversion::getNb(void) const
-{
-    return (_nb);
-}
 
-void    ScalarConversion::setStr(char *str)
+void    ScalarConversion::setStr(std::string str)
 {
     _str = str;
 }
 
-void    ScalarConversion::setNb(double nb)
+void    ScalarConversion::printChar(void)
 {
-    _nb = nb;
+    int res;
+    if(!(sscanf(_str.c_str(), "%d", &res)))
+        throw ImpossibleConvert();
+    else if (res < 32 || res > 126)
+        throw NonDisplayable();
+    std::cout << "'" << static_cast<char>(res)) << "'" << std::endl;
 }
 
-double  ScalarConversion::stringToDouble(const char *str)
+void    ScalarConversion::printInt(void)
 {
-    return (std::atof(str));
+    long res;
+    if(!(sscanf(_str.c_str(), "%ld", &res)))
+        throw ImpossibleConvert();
+    if (res > INT_MAX || res < INT_MIN)
+        throw ImpossibleConvert();
+    std::cout << static_cast<int>(res));
+}
+
+void    ScalarConversion::printFloat(void)
+{
+    float res;
+	if (conv == "-inf" || _str == "+inf" || _str == "inf" || _str == "nan")
+		std::cout << _str << "f" << std::endl;
+	else if (conv == "-inff" || _str == "+inff" || _str == "inff" || _str == "nanf")
+		std::cout << _str << std::endl;
+	else if (!(sscanf(conv.c_str(), "%f", &res)))
+		throw ImpossibleConvert();
+	else
+	{
+		std::cout << static_cast<float>(res);
+		if (floor(res) == res && _str.size() < 7)
+			std::cout << ".0";
+		std::cout << "f" << std::endl;
+    }
+}
+
+void    ScalarConversion::printDouble(void)
+{
+    double res;
+	if (_str == "-inf" || _str == "+inf"  || _str == "inf" || _str == "nan")
+		std::cout << _str << std::endl;
+	else if (_str == "-inff" || _str == "+inff" || _str == "inff" || _str == "nanf")
+	{
+		_str.resize(_str.size() - 1);
+		std::cout << _str << std::endl;
+	}
+	else if (!(sscanf(_str.c_str(), "%lf", &res)))
+		throw ImpossibleConvert();
+	else
+	{
+		std::cout << static_cast<double>(res);
+		if (floor(res) == res && _str.size() < 7)
+			std::cout << ".0";
+		std::cout << std::endl;
+	}
+}
+
+
+const char* ScalarConversion::NonDisplayable::what() const throw()
+{
+	return "Non displayable";
+}
+
+const char* ScalarConversion::ImpossibleConvert::what() const throw()
+{
+	return "impossible";
 }

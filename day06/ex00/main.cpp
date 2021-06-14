@@ -14,13 +14,39 @@
 
 int main(int argc, char **argv)
 {
-    for(int i = 1; i < argc; i++)
+    if(ac == 2)
     {
-        ScalarConversion sc(argv[i]);
-        char c;
-        c = static_cast<char>(sc.getNb());
-        std::cout << sc.getNb() << std::endl;
-        std::cout << c << std::endl;
-    }
+		ScalarConversion conv(argv[1]);
+		std::cout << "char: ";
+		try{
+			conv.printChar();
+		}
+		catch(const std::exception& e){
+			std::cerr << e.what() << std::endl;
+		}
+		std::cout << "int: ";
+		try{
+			conv.printInt();
+		}
+		catch(const std::exception& e){
+			std::cerr << "impossible" << std::endl;
+		}
+		std::cout << "float: ";
+		try{
+			conv.printFloat();
+		}
+		catch(const std::exception& e){
+			std::cerr << e.what() << std::endl;
+		}
+		std::cout << "double: ";
+		try{
+			conv.printDouble();
+		}
+		catch(const std::exception& e){
+			std::cerr << e.what() << std::endl;
+		}	
+	}
+    else
+        std::cout << "Too many arguments !" << std::endl;
     return (0);
 }
