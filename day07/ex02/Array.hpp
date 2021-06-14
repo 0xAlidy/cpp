@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:11:54 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/12 12:42:43 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/14 14:41:38 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,20 @@ class Array
         if (_array != NULL)
             delete[] _array;
     }
+    
     Array(const Array& obj): _n(obj._n)
     {
         _array = new T[_n];
-        for(int i=0; i < _n; i++)
+        for(unsigned int i = 0; i < _n; i++)
             _array[i] = obj._array[i];
     }
+
     Array& operator=(const Array& obj)
     {
         if (_array != NULL)
             delete[] _array;
         _array = new T[_n];
-        for(int i=0; i < _n; i++)
+        for(unsigned int i = 0; i < _n; i++)
             _array[i] = obj._array[i];
     }
 

@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:37:56 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/12 12:46:55 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/14 14:41:18 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,19 @@ int			main(void)
 	{
 		std::cerr << err.what() << std::endl;
 	}
-    Array<std::string> testStr(3);
-	std::cout << "TestStr = ";
-	for (int i = 0; i < testStr.size(); i++)
+	Array<char> testChar(3);
+	std::cout << "TestChar = ";
+	for (int i = 0; i < testChar.size(); i++)
 	{
-		testStr[i] = c;
-		std::cout << testStr[i] << " ";
+		testChar[i] = c;
+		std::cout << testChar[i] << " ";
         c++;
 	}
+	std::cout << std::endl;
+	const Array<char> testChar2(testChar);
+	std::cout << "TestChar2 (const) = ";
+	for (int i = 0; i < testChar2.size(); i++)
+		std::cout << testChar2[i] << " ";
 	std::cout << std::endl;
 	return (0);
 }
