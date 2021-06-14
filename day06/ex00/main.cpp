@@ -6,7 +6,7 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 13:22:21 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/09 12:54:47 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/14 11:11:51 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
-    if(ac == 2)
+    if(argc == 2)
     {
 		ScalarConversion conv(argv[1]);
 		std::cout << "char: ";
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 			conv.printInt();
 		}
 		catch(const std::exception& e){
-			std::cerr << "impossible" << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "float: ";
 		try{
@@ -47,6 +47,6 @@ int main(int argc, char **argv)
 		}	
 	}
     else
-        std::cout << "Too many arguments !" << std::endl;
+        std::cout << "Bad arguments !" << std::endl;
     return (0);
 }

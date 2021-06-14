@@ -6,20 +6,18 @@
 /*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 10:31:22 by alidy             #+#    #+#             */
-/*   Updated: 2021/06/12 11:40:21 by alidy            ###   ########lyon.fr   */
+/*   Updated: 2021/06/14 11:32:12 by alidy            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERSION_HPP
 # define SCALARCONVERSION_HPP
 # include <iostream>
-# include <stdio.h>
+# include <cstring>
 # include <iomanip>
 # include <exception>
 # include <string.h>
-# include <ctime>
 # include <cmath>
-# include <cstdlib>
 # include <limits>
 # include <sstream>
 
@@ -41,7 +39,8 @@ class ScalarConversion
     void        setStr(std::string str);
     
     // Methods
-    void        checkSpec(void);
+    int         checkChar(void);
+    int         getPrecision(void);
 	void        printChar(void);
 	void        printInt(void);
 	void        printFloat(void);
