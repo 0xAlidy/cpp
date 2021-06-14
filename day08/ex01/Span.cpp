@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/14 15:14:46 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/14 15:17:27 by alidy            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
 
 Span::Span(unsigned int n): _n(n)
@@ -5,7 +17,7 @@ Span::Span(unsigned int n): _n(n)
     _vect.reserve(n);
 }
 
-Span::Span(const Span& obj): _n(obj._n), _vect(obj._vect)
+Span::Span(const Span& obj): _vect(obj._vect), _n(obj._n)
 {
 
 }
@@ -32,8 +44,8 @@ void    Span::addNumber(int n)
 
 void    Span::addRange(int a, int b)
 {
-    for (int i = a; a <= b; a++)
-        addNumber(a);
+    for (int i = a; i <= b; i++)
+        addNumber(i);
 }
 
 unsigned int    Span::shortestSpan(void)
@@ -55,5 +67,5 @@ unsigned int    Span::longestSpan(void)
 {
     if (_vect.size() <= 1)
         throw std::logic_error("no span to calculate");
-    return (*std::max_element(_vect.begin(), _vect.end()) - *std::min_element(_vect.begin(), _vect.end());)
+    return (*std::max_element(_vect.begin(), _vect.end()) - *std::min_element(_vect.begin(), _vect.end()));
 }

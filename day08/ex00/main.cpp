@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/14 15:03:49 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/14 15:05:07 by alidy            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "easyfind.hpp"
 
 int			main(void)
@@ -11,8 +23,8 @@ int			main(void)
     v.push_back(40);
 	try
 	{
-        easyfind(s, nb);
-		std::cout << "Find : " << nb << "in the vector !" << std::endl;
+        easyfind(v, nb);
+		std::cout << "Find : " << nb << " in the vector !" << std::endl;
 	}
 	catch(std::string str)
 	{
@@ -21,8 +33,8 @@ int			main(void)
     nb++;
 	try
 	{
-		easyfind(s, nb);
-		std::cout << "Find : " << nb << "in the vector !" << std::endl;
+		easyfind(v, nb);
+		std::cout << "Find : " << nb << " in the vector !" << std::endl;
 	}
 	catch(std::string str)
 	{

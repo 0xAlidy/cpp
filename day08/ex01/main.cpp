@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alidy <alidy@student.42lyon.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/14 15:14:57 by alidy             #+#    #+#             */
+/*   Updated: 2021/06/14 15:18:13 by alidy            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
-
 #include <iostream>
-
-#define PRINT(x) std::cout << x << std::endl
-#define CATCH	catch (std::exception &e) { PRINT(e.what()); }
 
 int main()
 {
@@ -11,12 +19,12 @@ int main()
     Span big(10000);
 	try
 	{
+		s.addNumber(0);
 		s.addNumber(1);
 		s.addNumber(2);
 		s.addNumber(3);
 		s.addNumber(4);
 		s.addNumber(5);
-		s.addNumber(6);
 	}
 	catch(std::exception &e)
     { 
